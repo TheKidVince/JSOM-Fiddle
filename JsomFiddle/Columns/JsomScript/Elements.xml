@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{beeee414-4c65-451d-a13f-d074551430c6}"
+       Name="JsomScript"
+       DisplayName="Script"
+       Type="Note"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{091049fd-22c7-4e04-9d65-31e4692698ef}"
+       Name="JsomIncludeScriptBlock"
+       DisplayName="Include Script Block"
+       Type="Note"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

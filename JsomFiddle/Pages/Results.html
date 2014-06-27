@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title></title>
+    <link href="../Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/_layouts/15/MicrosoftAjax.js"></script>
+    <script type="text/javascript" src="/_layouts/15/init.js"></script>
+    <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
+    <script type="text/javascript" src="/_layouts/15/sp.js"></script>
+    <script type="text/javascript" src="/_layouts/15/SP.search.js"></script>
+    <script type="text/javascript" src="/_layouts/15/sp.ui.dialog.js"></script>
+
+    <script src="../Scripts/jquery-ui-1.10.4.min.js"></script>
+    <script src="../Scripts/jquery.format.js"></script>
+
+    <script type="text/javascript">
+        'use strict';
+
+        // Set the style of the client web part page to be consistent with the host web.
+        (function () {
+            var hostUrl = '';
+            if (document.URL.indexOf('?') != -1) {
+                var params = document.URL.split('?')[1].split('&');
+                for (var i = 0; i < params.length; i++) {
+                    var p = decodeURIComponent(params[i]);
+                    if (/^SPHostUrl=/i.test(p)) {
+                        hostUrl = p.split('=')[1];
+                        document.write('<link rel="stylesheet" href="' + hostUrl + '/_layouts/15/defaultcss.ashx" />');
+                        break;
+                    }
+                }
+            }
+            if (hostUrl == '') {
+                document.write('<link rel="stylesheet" href="/_layouts/15/1033/styles/themable/corev15.css" />');
+            }
+        })();
+        SP.SOD.executeFunc('sp.js', 'SP.ClientContext', function () { SP.SOD.executeFunc('sp.ui.dialog.js', 'SP.UI.ModelDialog', function () { alert('ready'); }); });
+    </script>
+</head>
+<body style="overflow:auto;background-color:white;color:black">
+
+    RESULTS APPEAR HERE
+
+</body>
+</html>

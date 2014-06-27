@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{040e80df-94b4-431c-96d3-681cf5952bff}"
+       Name="JsomSampleLevel"
+       DisplayName="Sample Level"
+       Type="Choice"
+       Required="FALSE"
+       Group="Custom Site Columns">
+    <CHOICES>
+      <CHOICE>Starter</CHOICE>
+      <CHOICE>Intermediate</CHOICE>
+      <CHOICE>Advanced</CHOICE>
+    </CHOICES>
+  </Field>
+</Elements>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{91bb1bb0-77ad-45a8-ad7e-34a8a23e5cb7}"
+       Name="JsomSampleArea"
+       DisplayName="Sample Area"
+       Type="MultiChoice" 
+       Required="FALSE"
+       Group="Custom Site Columns">
+    <CHOICES>
+      <CHOICE>Web</CHOICE>
+      <CHOICE>List</CHOICE>
+      <CHOICE>Context Web</CHOICE>
+      <CHOICE>Documents</CHOICE>
+      <CHOICE>Search</CHOICE>
+      <CHOICE>Security</CHOICE>
+      <CHOICE>Misc</CHOICE>
+    </CHOICES>
+  </Field>
+</Elements>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{ba0d6110-9ef9-4f9d-8873-d333cf417371}"
+       Name="JsomCss"
+       DisplayName="Css"
+       Type="Note"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

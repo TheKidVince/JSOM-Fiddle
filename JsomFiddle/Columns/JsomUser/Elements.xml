@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{e7ae02be-08f4-4517-b4a3-f16593490720}"
+       Name="JsomUser"
+       DisplayName="User"
+       Type="User"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

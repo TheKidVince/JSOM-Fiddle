@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{43df6313-e6e8-4ddc-877f-32da3aa58bd9}"
+       Name="JsomIncludes"
+       DisplayName="Includes"
+       Type="Lookup" List="Lists/Includes" ShowField="Title"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

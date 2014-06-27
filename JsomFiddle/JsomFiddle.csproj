@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39560948-CC31-4268-8355-011023C9F729}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JsomFiddle</RootNamespace>
+    <AssemblyName>JsomFiddle</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <ProjectMode>SharePointApp</ProjectMode>
+    <AppFeaturePartId>{ff87799c-d5aa-4686-8974-8d51436eadc4}</AppFeaturePartId>
+    <WspPartId>{8ae750c6-65c4-4ff6-b22b-17f41749323a}</WspPartId>
+    <WorkflowPartId>{501ea090-8921-42d6-a41d-e5e47636abaa}</WorkflowPartId>
+    <CspkgPartId>{4882da6c-5269-4986-9b60-557ff213871d}</CspkgPartId>
+    <SqlPackagePartId>{dadfcffa-23d4-4097-b751-2411f402837f}</SqlPackagePartId>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Columns\JsomCss\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{be41e8dd-4a9b-4dde-a5d2-a131b32236bd}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomHtml\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d16f6d82-7937-4d20-a615-172b1877c003}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomIncludeScriptBlock\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{82c357bc-4c12-4fe4-9d31-6e6cbc7b8b2e}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomIncludes\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ef99fc62-62a3-4603-9d6c-4b3aca81d6c7}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomSampleArea\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{db43e97b-8e94-4df1-b4be-207ae50b273d}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomSampleLevel\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{59ad992a-b179-464c-9db2-fd848c186120}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomScript\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{453711a3-8df9-457d-ab5f-bd120f73e3b8}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomSource\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{383d2b0f-3a44-4cfb-ada4-d930cfd00669}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\JsomUser\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{83712f89-b62c-4041-8e74-164f3cb0afbf}</SharePointProjectItemId>
+    </None>
+    <None Include="Columns\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{91259958-215c-4342-82b9-2acd7eb33a4f}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Exports\ExportsInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e745efe7-b175-4e6c-955e-cf301c2a8960}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Exports\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fb5823f3-be1b-4f32-9771-910a9323f48d}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Includes\IncludesInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0e9b04e6-3807-4763-b769-f960be4fdef7}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Includes\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b3bd9bae-9a02-4fd9-bc4d-5622d2612f1d}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Samples\SamplesInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fff3e756-f89c-4113-8f8e-6b76ff777b3c}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Samples\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c894a56f-7068-42fa-85da-5b6e18bdf200}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Saved\SavedInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e1290c2c-636d-4dde-859b-c2d875d66919}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\Saved\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1ef60590-e8cc-4115-a2a8-5012587ee382}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2cbb709a-0064-40dc-b290-77992b4a9b79}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b202ff72-669a-45f7-a581-7a175997681e}</SharePointProjectItemId>
+    </None>
+    <Content Include="Columns\Elements.xml" />
+    <Content Include="Columns\JsomCss\Elements.xml" />
+    <Content Include="Columns\JsomHtml\Elements.xml" />
+    <Content Include="Columns\JsomIncludeScriptBlock\Elements.xml" />
+    <Content Include="Columns\JsomIncludes\Elements.xml" />
+    <Content Include="Columns\JsomSampleArea\Elements.xml" />
+    <Content Include="Columns\JsomSampleLevel\Elements.xml" />
+    <Content Include="Columns\JsomScript\Elements.xml" />
+    <Content Include="Columns\JsomSource\Elements.xml" />
+    <Content Include="Columns\JsomUser\Elements.xml" />
+    <Content Include="Content\buttons\Arrowhead-Left.png" />
+    <Content Include="Content\buttons\Close.png" />
+    <Content Include="Content\buttons\Data-Export.png" />
+    <Content Include="Content\buttons\Data-Import.png" />
+    <Content Include="Content\buttons\Delete.png" />
+    <Content Include="Content\buttons\Help.png" />
+    <Content Include="Content\buttons\Media-Play.png" />
+    <Content Include="Content\buttons\Open.png" />
+    <Content Include="Content\buttons\Pin.png" />
+    <Content Include="Content\buttons\Save.png" />
+    <Content Include="Content\IE9.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\flick\images\animated-overlay.gif" />
+    <Content Include="Content\themes\flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\themes\flick\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Content\themes\flick\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Content\themes\flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Content\themes\flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Content\themes\flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Content\themes\flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\themes\flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Content\themes\flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\flick\jquery-ui.css" />
+    <Content Include="Content\themes\flick\jquery.ui.all.css" />
+    <Content Include="Content\themes\flick\jquery.ui.base.css" />
+    <Content Include="Content\themes\flick\jquery.ui.theme.css" />
+    <Content Include="Content\themes\flick\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Content\themes\flick\minified\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\flick\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\flick\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\jMetro\css\images\ui-icons_3399ff_0.png" />
+    <Content Include="Content\themes\jMetro\css\images\ui-icons_525252_0.png" />
+    <Content Include="Content\themes\jMetro\css\images\ui-icons_66B3FF_0.png" />
+    <Content Include="Content\themes\jMetro\css\images\ui-icons_d4d4d4_0.png" />
+    <Content Include="Content\themes\jMetro\css\images\ui-icons_ffffff_0.png" />
+    <Content Include="Content\themes\jMetro\css\jquery-ui.css" />
+    <Content Include="Content\themes\jMetro\index.html" />
+    <Content Include="Content\themes\jMetro\js\jquery-1.6.2.min.js" />
+    <Content Include="Content\themes\jMetro\js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Content\themes\jMetro\MIT-Licence.txt" />
+    <Content Include="Lists\Elements.xml" />
+    <Content Include="Lists\Exports\EditDlg.htm" />
+    <Content Include="Lists\Exports\Elements.xml" />
+    <Content Include="Lists\Exports\ExportsInstance\Elements.xml" />
+    <Content Include="Lists\Exports\FileDlg.htm" />
+    <Content Include="Lists\Exports\Repair.aspx" />
+    <Content Include="Lists\Exports\Schema.xml" />
+    <Content Include="Lists\Exports\Upload.aspx" />
+    <Content Include="Lists\Includes\Elements.xml" />
+    <Content Include="Lists\Includes\IncludesInstance\Elements.xml" />
+    <Content Include="Lists\Includes\Schema.xml" />
+    <Content Include="Lists\Samples\Elements.xml" />
+    <Content Include="Lists\Samples\SamplesInstance\Elements.xml" />
+    <Content Include="Lists\Samples\Schema.xml" />
+    <Content Include="Lists\Saved\Elements.xml" />
+    <Content Include="Lists\Saved\SavedInstance\Elements.xml" />
+    <Content Include="Lists\Saved\Schema.xml" />
+    <Content Include="Pages\Elements.xml" />
+    <Content Include="Pages\Default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Scripts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dadfcffa-23d4-4097-b751-2411f402837f}</SharePointProjectItemId>
+    </None>
+    <Content Include="Pages\Export.aspx" />
+    <Content Include="Pages\Results.html" />
+    <Content Include="Scripts\App\App.min.js" />
+    <Content Include="Scripts\App\App.js" />
+    <Content Include="Scripts\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <Content Include="Content\listbox.css" />
+    <Content Include="Scripts\jquery.easytabs.js" />
+    <Content Include="Scripts\jquery.easytabs.min.js" />
+    <Content Include="Scripts\jquery.format.js" />
+    <Content Include="Scripts\jquery.toast\jquery.toast.css" />
+    <Content Include="Scripts\jquery.toast\jquery.toast.js" />
+    <Content Include="Scripts\jquery.toast\jquery.toast.min.css" />
+    <Content Include="Scripts\jquery.toast\jquery.toast.min.js" />
+    <Content Include="Scripts\layout.js" />
+    <Content Include="Content\layout.css" />
+    <Content Include="Scripts\listbox.js" />
+    <Content Include="Scripts\splitter.js" />
+    <Content Include="Scripts\src\ace.js" />
+    <Content Include="Scripts\src\ext-chromevox.js" />
+    <Content Include="Scripts\src\ext-elastic_tabstops_lite.js" />
+    <Content Include="Scripts\src\ext-emmet.js" />
+    <Content Include="Scripts\src\ext-keybinding_menu.js" />
+    <Content Include="Scripts\src\ext-language_tools.js" />
+    <Content Include="Scripts\src\ext-modelist.js" />
+    <Content Include="Scripts\src\ext-old_ie.js" />
+    <Content Include="Scripts\src\ext-options.js" />
+    <Content Include="Scripts\src\ext-searchbox.js" />
+    <Content Include="Scripts\src\ext-settings_menu.js" />
+    <Content Include="Scripts\src\ext-spellcheck.js" />
+    <Content Include="Scripts\src\ext-split.js" />
+    <Content Include="Scripts\src\ext-static_highlight.js" />
+    <Content Include="Scripts\src\ext-statusbar.js" />
+    <Content Include="Scripts\src\ext-textarea.js" />
+    <Content Include="Scripts\src\ext-themelist.js" />
+    <Content Include="Scripts\src\ext-whitespace.js" />
+    <Content Include="Scripts\src\keybinding-emacs.js" />
+    <Content Include="Scripts\src\keybinding-vim.js" />
+    <Content Include="Scripts\src\mode-css.js" />
+    <Content Include="Scripts\src\mode-handlebars.js" />
+    <Content Include="Scripts\src\mode-html.js" />
+    <Content Include="Scripts\src\mode-html_completions.js" />
+    <Content Include="Scripts\src\mode-javascript.js" />
+    <Content Include="Scripts\src\mode-json.js" />
+    <Content Include="Scripts\src\snippets\css.js" />
+    <Content Include="Scripts\src\snippets\html.js" />
+    <Content Include="Scripts\src\snippets\html_completions.js" />
+    <Content Include="Scripts\src\snippets\html_ruby.js" />
+    <Content Include="Scripts\src\snippets\ini.js" />
+    <Content Include="Scripts\src\snippets\jack.js" />
+    <Content Include="Scripts\src\snippets\jade.js" />
+    <Content Include="Scripts\src\snippets\java.js" />
+    <Content Include="Scripts\src\snippets\javascript.js" />
+    <Content Include="Scripts\src\snippets\json.js" />
+    <Content Include="Scripts\src\theme-ambiance.js" />
+    <Content Include="Scripts\src\theme-chaos.js" />
+    <Content Include="Scripts\src\theme-chrome.js" />
+    <Content Include="Scripts\src\theme-clouds.js" />
+    <Content Include="Scripts\src\theme-clouds_midnight.js" />
+    <Content Include="Scripts\src\theme-cobalt.js" />
+    <Content Include="Scripts\src\theme-crimson_editor.js" />
+    <Content Include="Scripts\src\theme-dawn.js" />
+    <Content Include="Scripts\src\theme-dreamweaver.js" />
+    <Content Include="Scripts\src\theme-eclipse.js" />
+    <Content Include="Scripts\src\theme-github.js" />
+    <Content Include="Scripts\src\theme-idle_fingers.js" />
+    <Content Include="Scripts\src\theme-kr.js" />
+    <Content Include="Scripts\src\theme-merbivore.js" />
+    <Content Include="Scripts\src\theme-merbivore_soft.js" />
+    <Content Include="Scripts\src\theme-monokai.js" />
+    <Content Include="Scripts\src\theme-mono_industrial.js" />
+    <Content Include="Scripts\src\theme-pastel_on_dark.js" />
+    <Content Include="Scripts\src\theme-solarized_dark.js" />
+    <Content Include="Scripts\src\theme-solarized_light.js" />
+    <Content Include="Scripts\src\theme-terminal.js" />
+    <Content Include="Scripts\src\theme-textmate.js" />
+    <Content Include="Scripts\src\theme-tomorrow.js" />
+    <Content Include="Scripts\src\theme-tomorrow_night.js" />
+    <Content Include="Scripts\src\theme-tomorrow_night_blue.js" />
+    <Content Include="Scripts\src\theme-tomorrow_night_bright.js" />
+    <Content Include="Scripts\src\theme-tomorrow_night_eighties.js" />
+    <Content Include="Scripts\src\theme-twilight.js" />
+    <Content Include="Scripts\src\theme-vibrant_ink.js" />
+    <Content Include="Scripts\src\worker-css.js" />
+    <Content Include="Scripts\src\worker-javascript.js" />
+    <Content Include="Scripts\src\worker-json.js" />
+    <Content Include="Scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ea979d46-5fbe-4566-ba8f-363aebce33b7}</SharePointProjectItemId>
+    </None>
+    <Content Include="Content\Elements.xml" />
+    <Content Include="Content\App.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\AppIcon.png">
+      <OpcRelationship>manifest-icon</OpcRelationship>
+    </Content>
+    <Content Include="Images\Elements.xml" />
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cc757c59-88c8-4c80-8904-9567bff593f1}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\Package.package">
+      <PackageId>{d52735f7-cbae-4107-92c9-dd39f8e5eb0f}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Features\JsomFiddle\JsomFiddle.feature">
+      <FeatureId>{cc611010-c2c6-409e-95aa-789aad72cd5b}</FeatureId>
+    </None>
+    <None Include="Features\JsomFiddle\JsomFiddle.Template.xml">
+      <DependentUpon>JsomFiddle.feature</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AppManifestFile Include="AppManifest.xml">
+      <SubType>Designer</SubType>
+    </AppManifestFile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\App\App.ts" />
+    <TypeScriptCompile Include="Scripts\typings\ace\ace.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.ui.datetimepicker\jquery.ui.datetimepicker.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.ui.layout\jquery.ui.layout.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jqueryui\jqueryui.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\sharepoint\SharePoint.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources %28Host Web%29\Resources.resx">
+      <OpcRelationship>content-defaultresource</OpcRelationship>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources %28Host Web%29\Resources.en.resx">
+      <OpcRelationship>content-resource</OpcRelationship>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources %28Host Web%29\Resources.en-US.resx">
+      <OpcRelationship>content-resource</OpcRelationship>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES3</TypeScriptTarget>
+    <TypeScriptIncludeComments>true</TypeScriptIncludeComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES3</TypeScriptTarget>
+    <TypeScriptIncludeComments>false</TypeScriptIncludeComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
+</Project>

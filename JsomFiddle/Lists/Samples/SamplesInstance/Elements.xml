@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Samples" OnQuickLaunch="TRUE" TemplateType="10000" Url="Lists/Samples" VersioningEnabled="TRUE" Description="My List Instance">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Get app web title</Field>
+          <Field Name="JsomScript"><![CDATA[  var ctx = SP.ClientContext.get_current();
+  var web = ctx.get_web();
+  ctx.load(web);
+  ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+      $('#title').text(web.get_title());
+    },
+    function (s, e) // Error
+    {
+      alert(e.get_message());
+  });]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<div id='title'></div>]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Basic CAML query</Field>
+          <Field Name="JsomScript"><![CDATA[  // This sample searches the Saved fiddles for an item with a title of 'Test'
+        // If you save a fiddle with this title the count should be 1
+        var ctx = SP.ClientContext.get_current();
+        var list = ctx.get_web().get_lists().getByTitle("Saved");
+
+        var q = new SP.CamlQuery();
+        q.set_viewXml("<View><Query><Where><Eq><FieldRef Name='Title'/><Value Type='Text'>Test</Value></Eq></Where></Query></View>");
+  var items = list.getItems(q);
+  ctx.load(items);
+  
+  ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+        alert(items.get_count());
+    },
+    function (s, e) // Error
+    {
+      alert(e.get_message());
+  });]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<div></div>]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Get list schema</Field>
+          <Field Name="JsomScript"><![CDATA[  var ctx = SP.ClientContext.get_current();
+  var list = ctx.get_web().get_lists().getByTitle("Samples");
+  ctx.load(list, "SchemaXml");
+  ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+      $('#schema').text(list.get_schemaXml());
+      $('#schema').format('xml');
+    },
+    function (s, e) // Error
+    {
+      alert(e.get_message());
+  });]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<textarea id='schema' style='width:100%;height:100%'></textarea>]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Lists from host web</Field>
+          <Field Name="JsomHtml"><![CDATA[<div id='lists'></div>]]></Field>
+          <Field Name="JsomScript"><![CDATA[  var hostUrl = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
+    var ctx = new SP.ClientContext.get_current();
+    var hostCtx = new SP.AppContextSite(ctx, hostUrl);
+
+    var web = hostCtx.get_web();
+    var lists = web.get_lists();
+
+    ctx.load(web, "Title");
+    ctx.load(lists)
+
+    ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+        var listsHtml = "<ul>";
+        for (var c=0; c<lists.get_count(); c++) {
+            var list = lists.getItemAtIndex(c);
+            listsHtml += "<li>" + list.get_title() + " (" + list.get_itemCount() + ")</li>";
+        }
+        listsHtml += "</ul>";
+        
+        $('#lists').html(listsHtml);
+    },
+    function (s, e) // Error
+    {
+        alert(e.get_message());
+    });
+
+
+function getQueryStringParameter(paramToRetrieve) {
+    var params = document.URL.split("?")[1].split("&");
+    var strParams = "";
+    for (var i = 0; i < params.length; i = i + 1) {
+        var singleParam = params[i].split("=");
+        if (singleParam[0] == paramToRetrieve)
+            return singleParam[1];
+    }
+}]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Show lists - click for items</Field>
+          <Field Name="JsomScript"><![CDATA[    var hostUrl = decodeURIComponent(getQueryStringParameter("SPHostUrl"));
+    var ctx = new SP.ClientContext.get_current();
+    var hostCtx = new SP.AppContextSite(ctx, hostUrl);
+
+    var web = hostCtx.get_web();
+    var lists = web.get_lists();
+
+    ctx.load(web, "Title");
+    ctx.load(lists);
+
+    ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+        var listsHtml = "";
+        for (var c=0; c<lists.get_count(); c++) {
+            var list = lists.getItemAtIndex(c);
+            listsHtml += "<div class='splist' pos='" + c + "'>" + list.get_title() +
+            " (" + list.get_itemCount() + ")</div>";
+        }
+
+        $('#lists').html(listsHtml);
+        $('.splist').click(function(e){
+           var li = $(this);
+           var pos = li.attr('pos'); 
+           var list = lists.getItemAtIndex(pos);
+           var fields = list.get_fields();
+           ctx.load(fields, "Include(StaticName, Hidden, Title)");
+           var items = list.getItems('');
+           ctx.load(items);
+           ctx.executeQueryAsync(
+               function (s, a) // Success
+               {
+                   var html = "<h3>" + list.get_title() + "</h3><table><thead>";
+                   var body = "<tbody>";
+                   for (var i=0; i<fields.get_count(); i++) {
+                       var field = fields.getItemAtIndex(i);
+                       if (field.get_hidden() == false){
+                            html += "<th>" + field.get_title() + "</th>";
+                       }
+                   }
+                   for (var t=0; t<items.get_count(); t++) {
+                       var item = items.get_item(0);
+                       var vals = item.get_fieldValues();
+                       body += "<tr>";
+                       for (var i=0; i<fields.get_count(); i++) {
+                           var field = fields.getItemAtIndex(i);
+                           if (field.get_hidden() == false){
+                               body += "<td>" + vals[field.get_staticName()] + "</td>";
+                           }
+                       }
+                       body += "</tr>";
+                   }
+                   
+                   html += "</thead>" + body + "</tbody></table>";
+                   li.html(html);
+               },
+               function (s, e)
+               {
+                   alert(e.get_message());
+               });
+        });
+    },
+    function (s, e) // Error
+    {
+        alert(e.get_message());
+    });
+
+function getQueryStringParameter(paramToRetrieve) {
+    var params = document.URL.split("?")[1].split("&");
+    var strParams = "";
+    for (var i = 0; i < params.length; i = i + 1) {
+        var singleParam = params[i].split("=");
+        if (singleParam[0] == paramToRetrieve)
+            return singleParam[1];
+    }
+}]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<style>
+    th{font-size:7pt;}
+    td{font-size:6pt;}
+    .splist{cursor:default;}
+  </style>
+  <div id='lists'></div>]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Create a list</Field>
+          <Field Name="JsomScript"><![CDATA[    var ctx = SP.ClientContext.get_current();
+    
+    var title = prompt("Enter list title");
+    
+    var listCreationInfo = new SP.ListCreationInformation();
+    listCreationInfo.set_title(title);
+    listCreationInfo.set_templateType(SP.ListTemplateType.announcements);
+
+    var list = ctx.get_web().get_lists().add(listCreationInfo);
+
+    ctx.load(list, "DefaultViewUrl","ItemCount","Title","Id");
+    
+    ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+        var table = $('#details tbody');
+        table.append("<tr><td>Title</td><td>" + list.get_title() + "</td></tr>");
+        table.append("<tr><td>ID</td><td>" + list.get_id() + "</td></tr>");
+        table.append("<tr><td>Url</td><td><a target='_blank' href='" + list.get_defaultViewUrl() + "'>" + list.get_defaultViewUrl() + "</td></tr>");
+    },
+    function (s, e) // Error
+    {
+      alert(e.get_message());
+  });]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<table id='details'>
+    <tbody></tbody>
+</table>]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Basic search results</Field>
+          <Field Name="JsomScript">
+          <![CDATA[    var ctx = SP.ClientContext.get_current();
+    
+    var keywordQuery = new Microsoft.SharePoint.Client.Search.Query.KeywordQuery(ctx); 
+    keywordQuery.set_queryText("SharePoint"); 
+    var searchExecutor = new Microsoft.SharePoint.Client.Search.Query.SearchExecutor(ctx);  
+    var results = searchExecutor.executeQuery(keywordQuery); 
+
+    ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+        var resultTables = results.get_value().ResultTables;
+        // Results
+        if (resultTables.length > 0 && resultTables[0].ResultRows.length > 0) {
+            $.each(resultTables[0].ResultRows, function () {
+                $("#results").append("<div><a target='_blank' href='" + this.Path + "'>" + this.Title + "</a></div>");
+            });
+        }
+        else
+            $('#results').text("No results")
+    },
+    function (s, e) // Error
+    {
+      alert(e.get_message());
+  });]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<div id='results'>
+</div>]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Show web properties</Field>
+          <Field Name="JsomScript"><![CDATA[    var ctx = SP.ClientContext.get_current();
+    var webProperties = ctx.get_web().get_allProperties();
+    ctx.load(webProperties);
+    
+    ctx.executeQueryAsync(
+    function (s, a) // Success
+    {
+        var vals = webProperties.get_fieldValues();
+        var list = $('#props tr:last');
+        for (var p in vals)
+            list.after('<tr><td>' + p + "</td><td>" + vals[p] + "</td></tr>");
+    },
+    function (s, e) // Error
+    {
+      alert(e.get_message());
+  });]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<table id='props'>
+    <thead>
+        <tr><th>Name</th><th>Value</th></tr>
+    </thead>
+    <tbody></tbody>
+</table>]]></Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Create document in library</Field>
+          <Field Name="JsomScript"><![CDATA[    var ctx = SP.ClientContext.get_current();
+    var oWebsite = ctx.get_web();
+    var oList = oWebsite.get_lists().getByTitle("Exports");
+
+    var fileCreateInfo = new SP.FileCreationInformation();
+    var now = new Date();
+
+    fileCreateInfo.set_url(now.getTime() + ".txt");
+    fileCreateInfo.set_content(new SP.Base64EncodedByteArray());
+
+    var fileContent = "Sample file from JSOM Fiddle";
+
+    for (var i = 0; i < fileContent.length; i++) {
+        fileCreateInfo.get_content().append(fileContent.charCodeAt(i));
+    }
+
+    var newFile = oList.get_rootFolder().get_files().add(fileCreateInfo);
+
+    ctx.load(newFile);
+    ctx.executeQueryAsync(function (o, a) {
+        window.open(newFile.get_serverRelativeUrl(), "_blank");
+    }, function (o, e) {
+        alert(e.get_message());
+    });]]></Field>
+          <Field Name="JsomHtml"><![CDATA[<div id='title'></div>]]></Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>
