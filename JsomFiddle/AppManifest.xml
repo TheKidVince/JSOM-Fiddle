@@ -20,5 +20,14 @@
   </AppPrincipal>
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Manage" />
+    <AppPermissionRequest Scope="http://sharepoint/search" Right="QueryAsUserIgnoreAppPrincipal" />
+    <AppPermissionRequest Scope="http://sharepoint/social/core" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/social/microfeed" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/taxonomy" Right="Write" />
+    <AppPermissionRequest Scope="http://sharepoint/social/tenant" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/tenant" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/bcs/connection" Right="Read" />
   </AppPermissionRequests>
 </App>
